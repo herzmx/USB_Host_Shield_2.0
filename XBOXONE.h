@@ -65,7 +65,7 @@
 #define XBOX_ONE_PID11                          0x542A // Xbox ONE spectra
 #define XBOX_ONE_PID12                          0x543A // PowerA Xbox One wired controller
 #define XBOX_ONE_PID14                          0x02A8 // PDP Wired controller for XBOX ONE
-#define XBOX_ONE_PID15                          0x00C2 // HORI SoulCalibur VI Game Pad
+#define XBOX_ONE_PID15                          0x00C2 // HORI SoulCalibur VI Game Pad	
 
 
 
@@ -132,8 +132,7 @@ public:
                 return ((vid == XBOX_VID1 || vid == XBOX_VID2 || vid == XBOX_VID3 || vid == XBOX_VID4 || vid == XBOX_VID5 || vid == XBOX_VID6 || vid == XBOX_VID7) &&
                     (pid == XBOX_ONE_PID1 || pid == XBOX_ONE_PID2 || pid == XBOX_ONE_PID3 || pid == XBOX_ONE_PID4 ||
                         pid == XBOX_ONE_PID5 || pid == XBOX_ONE_PID6 || pid == XBOX_ONE_PID7 || pid == XBOX_ONE_PID8 ||
-                        pid == XBOX_ONE_PID9 || pid == XBOX_ONE_PID10 || pid == XBOX_ONE_PID11 || pid == XBOX_ONE_PID12 ||
-                        pid == XBOX_ONE_PID13 || pid == XBOX_ONE_PID14 || XBOX_ONE_PID15));
+                        pid == XBOX_ONE_PID9 || pid == XBOX_ONE_PID10 || pid == XBOX_ONE_PID11 || pid == XBOX_ONE_PID12 || pid == XBOX_ONE_PID13 || pid == XBOX_ONE_PID14 || pid == XBOX_ONE_PID15 ));
         };
         /**@}*/
 
