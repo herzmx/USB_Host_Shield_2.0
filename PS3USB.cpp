@@ -181,7 +181,7 @@ uint8_t PS3USB::Init(uint8_t parent, uint8_t port, bool lowspeed) {
                         Notify(PSTR("\r\nDualshock 3 Controller Connected"), 0x80);
 #endif
                         PS3Connected = true;
-                        controllerType = (PID == PS3_PID) ? PS3 : HoriMini;
+                        controllerType = (PID == PS3_PID) ? PS3Official : HoriMini;
                 } else { // must be a navigation controller
 #ifdef DEBUG_USB_HOST
                         Notify(PSTR("\r\nNavigation Controller Connected"), 0x80);

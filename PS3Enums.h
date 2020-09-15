@@ -135,7 +135,7 @@ const uint8_t PS3_ANALOG_BUTTONS[] PROGMEM = {
 
 enum ControllerType {
     None = 0,
-    PS3 = 1,
+    PS3Official= 1,
     PS3Navigation = 2,
     PS3Move = 3,
     HoriMini = 4,
