@@ -175,17 +175,19 @@ uint8_t PS3USB::Init(uint8_t parent, uint8_t port, bool lowspeed) {
         if(rcode)
                 goto FailSetConfDescr;
 
-        if(PID == PS3_PID || PID == PS3NAVIGATION_PID) {
-                if(PID == PS3_PID) {
+        if(PID == PS3_PID || PID == PS3NAVIGATION_PID || PID == HORI_MINI_PID) {
+                if(PID == PS3_PID || PID == HORI_MINI_PID) {
 #ifdef DEBUG_USB_HOST
                         Notify(PSTR("\r\nDualshock 3 Controller Connected"), 0x80);
 #endif
                         PS3Connected = true;
+                        controllerType = (PID == PS3_PID) ? PS3 : HoriMini;
                 } else { // must be a navigation controller
 #ifdef DEBUG_USB_HOST
                         Notify(PSTR("\r\nNavigation Controller Connected"), 0x80);
 #endif
                         PS3NavigationConnected = true;
+                        controllerType = PS3Navigation;
                 }
                 enable_sixaxis(); // The PS3 controller needs a special command before it starts sending data
 
@@ -200,6 +202,7 @@ uint8_t PS3USB::Init(uint8_t parent, uint8_t port, bool lowspeed) {
                 Notify(PSTR("\r\nMotion Controller Connected"), 0x80);
 #endif
                 PS3MoveConnected = true;
+                controllerType = PS3Move;
                 writeBuf[0] = 0x02; // Set report ID, this is needed for Move commands to work
         }
         if(my_bdaddr[0] != 0x00 || my_bdaddr[1] != 0x00 || my_bdaddr[2] != 0x00 || my_bdaddr[3] != 0x00 || my_bdaddr[4] != 0x00 || my_bdaddr[5] != 0x00) {
@@ -263,6 +266,7 @@ uint8_t PS3USB::Release() {
         PS3Connected = false;
         PS3MoveConnected = false;
         PS3NavigationConnected = false;
+        controllerType = None;
         pUsb->GetAddressPool().FreeAddress(bAddress);
         bAddress = 0;
         bPollEnable = false;
@@ -314,6 +318,9 @@ void PS3USB::printReport() { // Uncomment "#define PRINTREPORT" to print the rep
 }
 
 bool PS3USB::getButtonPress(ButtonEnum b) {
+        if(controllerType == HoriMini) {
+            return (ButtonState & pgm_read_dword(&HORI_BUTTONS[(uint8_t)b]));
+        }
         return (ButtonState & pgm_read_dword(&PS3_BUTTONS[(uint8_t)b]));
 }
 

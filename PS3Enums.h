@@ -85,6 +85,29 @@ const uint32_t PS3_BUTTONS[] PROGMEM = {
         0x100000, // T - covers 12 bits - we only need to read the top 8
 };
 
+const uint32_t HORI_BUTTONS[] PROGMEM = { // Hori - Fighting Stick mini 4 kai
+        0x01, 		// UP 		- 0 20 1 0 0 0 0 0
+        0x08, 		// RIGHT 	- 0 20 8 0 0 0 0 0
+        0x02, 		// DOWN 	- 0 20 2 0 0 0 0 0
+        0x04, 		// LEFT 	- 0 20 4 0 0 0 0 0
+
+        0x10, 		// SELECT 	- 0 20 16 0 0 0 0 0
+        0x20, 		// START 	- 0 20 32 0 0 0 0 0
+
+        0x0100, 	// L1 		- 0 20 0 1 0 0 0 0
+        0x0200, 	// R1 		- 0 20 0 2 0 0 0 0
+
+        0x0400, 	// PS 		- 0 20 0 4 0 0 0 0
+
+        0x1000, 	// CROSS 	- 0 20 0 16 0 0 0 0
+        0x2000, 	// CIRCLE 	- 0 20 0 32 0 0 0 0
+        0x4000, 	// SQUARE 	- 0 20 0 64 0 0 0 0
+        0x8000, 	// TRIANGLE	- 0 20 0 128 0 0 0 0
+
+        0xFF00000, 	// L2 		- 0 20 0 0 255 0 0 0
+        0xFF000000, // R2 		- 0 20 0 0 0 255 0 0
+};
+
 /**
  * Analog buttons on the controllers.
  * <B>Note:</B> that the location is shifted 9 when it's connected via USB.
@@ -108,6 +131,14 @@ const uint8_t PS3_ANALOG_BUTTONS[] PROGMEM = {
 
         // Playstation Move Controller
         15, // T_ANALOG - Both at byte 14 (last reading) and byte 15 (current reading)
+};
+
+enum ControllerType {
+    None = 0,
+    PS3 = 1,
+    PS3Navigation = 2,
+    PS3Move = 3,
+    HoriMini = 4,
 };
 
 enum StatusEnum {
