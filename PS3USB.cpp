@@ -102,7 +102,7 @@ uint8_t PS3USB::Init(uint8_t parent, uint8_t port, bool lowspeed) {
         VID = udd->idVendor;
         PID = udd->idProduct;
 
-        if(VID != PS3_VID || (PID != PS3_PID && PID != PS3NAVIGATION_PID && PID != PS3MOVE_PID) || (VID != HORI_VID && PID != HORI_MINI_PID))
+        if((VID != PS3_VID || (PID != PS3_PID && PID != PS3NAVIGATION_PID && PID != PS3MOVE_PID)) && (VID != HORI_VID && PID != HORI_MINI_PID))
                 goto FailUnknownDevice;
 
         // Allocate new address according to device class
