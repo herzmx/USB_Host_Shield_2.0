@@ -181,7 +181,11 @@ uint8_t PS3USB::Init(uint8_t parent, uint8_t port, bool lowspeed) {
                         Notify(PSTR("\r\nDualshock 3 Controller Connected"), 0x80);
 #endif
                         PS3Connected = true;
-                        controllerType = (PID == PS3_PID) ? PS3Official : HoriMini;
+                        if(PID == HORI_MINI_PID) {
+                            controllerType = HoriMini;
+                        } else {
+                            controllerType = PS3Official;
+                        }
                 } else { // must be a navigation controller
 #ifdef DEBUG_USB_HOST
                         Notify(PSTR("\r\nNavigation Controller Connected"), 0x80);
@@ -296,7 +300,7 @@ uint8_t PS3USB::Poll() {
 }
 
 void PS3USB::readReport() {
-        ButtonState = (uint32_t)(readBuf[2] | ((uint16_t)readBuf[3] << 8) | ((uint32_t)readBuf[4] << 16));
+        ButtonState = (uint32_t)(readBuf[2] | ((uint16_t)readBuf[3] << 8) | ((uint32_t)readBuf[4] << 16) | ((uint32_t)readBuf[5] << 24));
 
         //Notify(PSTR("\r\nButtonState", 0x80);
         //PrintHex<uint32_t>(ButtonState, 0x80);
@@ -325,7 +329,12 @@ bool PS3USB::getButtonPress(ButtonEnum b) {
 }
 
 bool PS3USB::getButtonClick(ButtonEnum b) {
-        uint32_t button = pgm_read_dword(&PS3_BUTTONS[(uint8_t)b]);
+        uint32_t button;
+        if(controllerType == HoriMini) {
+                button = pgm_read_dword(&HORI_BUTTONS[(uint8_t)b]);
+        } else {
+                button = pgm_read_dword(&PS3_BUTTONS[(uint8_t)b]);
+        }
         bool click = (ButtonClickState & button);
         ButtonClickState &= ~button; // Clear "click" event
         return click;
