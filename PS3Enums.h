@@ -106,8 +106,8 @@ const uint32_t HORI_BUTTONS[] PROGMEM = { // Hori - Fighting Stick mini 4 kai
         0x4000, 	 // SQUARE 	- 0 20 0 40 0 0 0 0
         0x8000, 	 // TRIANGLE	- 0 20 0 80 0 0 0 0
 
-        0xFF00000, 	 // L2 		- 0 20 0 0 FF 0 0 0
-        0xFF0000000, // R2 		- 0 20 0 0 0 FF 0 0
+        0xFF0000, 	 // L2 		- 0 20 0 0 FF 0 0 0
+        0xFF000000, // R2 		- 0 20 0 0 0 FF 0 0
 };
 
 /**
