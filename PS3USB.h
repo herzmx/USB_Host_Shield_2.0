@@ -37,7 +37,10 @@
 #define PS3MOVE_PID             0x03D5  // Motion controller
 
 #define HORI_VID                0x0F0D  // Hori
-#define HORI_MINI_PID           0x00ED
+#define HORI_MINI_PID           0x00ED  // Fighting Stick mini 4 kai
+
+#define EightBitDo_BT_VID       0x045E  // 8BitDo Bluetooth
+#define EightBitDo_BT_REC_PID   0x028E  // 8BitDo NES & SNES Receivers (Firmware v1.33)
 
 #define PS3_MAX_ENDPOINTS       3
 
@@ -103,8 +106,8 @@ public:
          * @return     Returns true if the device's VID and PID matches this driver.
          */
         virtual bool VIDPIDOK(uint16_t vid, uint16_t pid) {
-                return ((vid == PS3_VID || vid == HORI_VID ) &&
-                    (pid == PS3_PID || pid == PS3NAVIGATION_PID || pid == PS3MOVE_PID || pid == HORI_MINI_PID));
+                return ((vid == PS3_VID || vid == HORI_VID || vid == EightBitDo_BT_VID ) && 
+                    (pid == PS3_PID || pid == PS3NAVIGATION_PID || pid == PS3MOVE_PID || pid == HORI_MINI_PID || pid == EightBitDo_BT_REC_PID));
         };
         /**@}*/
 

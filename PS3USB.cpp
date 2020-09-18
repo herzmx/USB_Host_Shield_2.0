@@ -102,7 +102,8 @@ uint8_t PS3USB::Init(uint8_t parent, uint8_t port, bool lowspeed) {
         VID = udd->idVendor;
         PID = udd->idProduct;
 
-        if((VID != PS3_VID || (PID != PS3_PID && PID != PS3NAVIGATION_PID && PID != PS3MOVE_PID)) && (VID != HORI_VID && PID != HORI_MINI_PID))
+        if((VID != PS3_VID || (PID != PS3_PID && PID != PS3NAVIGATION_PID && PID != PS3MOVE_PID)) && 
+            (VID != HORI_VID && PID != HORI_MINI_PID) && (VID != EightBitDo_BT_VID && PID != EightBitDo_BT_REC_PID))
                 goto FailUnknownDevice;
 
         // Allocate new address according to device class
@@ -175,14 +176,17 @@ uint8_t PS3USB::Init(uint8_t parent, uint8_t port, bool lowspeed) {
         if(rcode)
                 goto FailSetConfDescr;
 
-        if(PID == PS3_PID || PID == PS3NAVIGATION_PID || PID == HORI_MINI_PID) {
-                if(PID == PS3_PID || PID == HORI_MINI_PID) {
+        if(PID == PS3_PID || PID == PS3NAVIGATION_PID || PID == HORI_MINI_PID || PID == EightBitDo_BT_REC_PID) {
+                if(PID == PS3_PID || PID == HORI_MINI_PID || PID == EightBitDo_BT_REC_PID) {
 #ifdef DEBUG_USB_HOST
                         Notify(PSTR("\r\nDualshock 3 Controller Connected"), 0x80);
 #endif
                         PS3Connected = true;
                         if(PID == HORI_MINI_PID) {
                             controllerType = HoriMini;
+                        }
+                        else if(PID == EightBitDo_BT_REC_PID) {
+                            controllerType = EightBitDo_Bluetooth;
                         } else {
                             controllerType = PS3Official;
                         }
@@ -318,19 +322,25 @@ void PS3USB::printReport() { // Uncomment "#define PRINTREPORT" to print the rep
                 Notify(PSTR(" "), 0x80);
         }
         Notify(PSTR("\r\n"), 0x80);
+        for(uint8_t i = 0; i < 8; i++) { 
+                Serial.print(readBuf[i]);
+                Serial.print(' ');
+        }
+        Serial.println(' ');    
 #endif
 }
 
 bool PS3USB::getButtonPress(ButtonEnum b) {
-        if(controllerType == HoriMini) {
-            return (ButtonState & pgm_read_dword(&HORI_BUTTONS[(uint8_t)b]));
+        if(controllerType == HoriMini || controllerType == EightBitDo_Bluetooth ) {
+                return (ButtonState & pgm_read_dword(&HORI_BUTTONS[(uint8_t)b]));     
+        } else {
+                return (ButtonState & pgm_read_dword(&PS3_BUTTONS[(uint8_t)b]));      
         }
-        return (ButtonState & pgm_read_dword(&PS3_BUTTONS[(uint8_t)b]));
 }
 
 bool PS3USB::getButtonClick(ButtonEnum b) {
         uint32_t button;
-        if(controllerType == HoriMini) {
+        if(controllerType == HoriMini || controllerType == EightBitDo_Bluetooth ) {
                 button = pgm_read_dword(&HORI_BUTTONS[(uint8_t)b]);
         } else {
                 button = pgm_read_dword(&PS3_BUTTONS[(uint8_t)b]);
