@@ -36,6 +36,9 @@
 #define PS3NAVIGATION_PID       0x042F  // Navigation controller
 #define PS3MOVE_PID             0x03D5  // Motion controller
 
+#define HORI_VID                0x0F0D  // Hori
+#define HORI_MINI_PID           0x00ED
+
 #define PS3_MAX_ENDPOINTS       3
 
 /**
@@ -100,7 +103,8 @@ public:
          * @return     Returns true if the device's VID and PID matches this driver.
          */
         virtual bool VIDPIDOK(uint16_t vid, uint16_t pid) {
-                return (vid == PS3_VID && (pid == PS3_PID || pid == PS3NAVIGATION_PID || pid == PS3MOVE_PID));
+                return ((vid == PS3_VID || vid == HORI_VID ) &&
+                    (pid == PS3_PID || pid == PS3NAVIGATION_PID || pid == PS3MOVE_PID || pid == HORI_MINI_PID));
         };
         /**@}*/
 
@@ -256,6 +260,8 @@ public:
         };
         /**@}*/
 
+        /** Variable used to indicate which type of PS3 controller is connected. See PS3Enums.h **/
+        ControllerType controllerType = None;
         /** Variable used to indicate if the normal playstation controller is successfully connected. */
         bool PS3Connected;
         /** Variable used to indicate if the move controller is successfully connected. */
