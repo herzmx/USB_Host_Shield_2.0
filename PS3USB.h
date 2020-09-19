@@ -108,7 +108,7 @@ public:
         virtual bool VIDPIDOK(uint16_t vid, uint16_t pid) {
                 return ((vid == PS3_VID  && (pid == PS3_PID || pid == PS3NAVIGATION_PID || pid == PS3MOVE_PID )) ||
                         (vid == HORI_VID && pid == HORI_MINI_PID) ||
-                        (vid == EIGHTBITDO_BT_VID && pid = EIGHTBITDO_BT_REC_PID));
+                        (vid == EIGHTBITDO_BT_VID && pid == EIGHTBITDO_BT_REC_PID));
         };
         /**@}*/
 
