@@ -176,7 +176,7 @@ uint8_t PS3USB::Init(uint8_t parent, uint8_t port, bool lowspeed) {
         if(rcode)
                 goto FailSetConfDescr;
 
-        if(PID == PS3_PID || PID == PS3NAVIGATION_PID || PID == HORI_MINI_PID || PID == EightBitDo_BT_REC_PID) {
+        if(PID == PS3_PID || PID == PS3NAVIGATION_PID || PID == HORI_MINI_PID || PID == EIGHTBITDO_BT_REC_PID) {
                 if(PID == PS3_PID || PID == HORI_MINI_PID || PID == EIGHTBITDO_BT_REC_PID) {
 #ifdef DEBUG_USB_HOST
                         Notify(PSTR("\r\nDualshock 3 Controller Connected"), 0x80);
