@@ -106,8 +106,9 @@ public:
          * @return     Returns true if the device's VID and PID matches this driver.
          */
         virtual bool VIDPIDOK(uint16_t vid, uint16_t pid) {
-                return ((vid == PS3_VID || vid == HORI_VID || vid == EIGHTBITDO_BT_VID ) &&
-                    (pid == PS3_PID || pid == PS3NAVIGATION_PID || pid == PS3MOVE_PID || pid == HORI_MINI_PID || pid == EIGHTBITDO_BT_REC_PID));
+                return ((vid == PS3_VID  && (pid == PS3_PID || pid == PS3NAVIGATION_PID || pid == PS3MOVE_PID )) ||
+                        (vid == HORI_VID && pid == HORI_MINI_PID) ||
+                        (vid == EIGHTBITDO_BT_VID && pid = EIGHTBITDO_BT_REC_PID));
         };
         /**@}*/
 
