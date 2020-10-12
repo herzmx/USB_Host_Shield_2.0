@@ -140,6 +140,7 @@ enum ControllerType {
     PS3Navigation = 2,
     PS3Move = 3,
     HoriMini = 4,
+	QanbaCrystal = 5,
 };
 
 enum StatusEnum {

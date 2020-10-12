@@ -176,14 +176,17 @@ uint8_t PS3USB::Init(uint8_t parent, uint8_t port, bool lowspeed) {
         if(rcode)
                 goto FailSetConfDescr;
 
-        if(PID == PS3_PID || PID == PS3NAVIGATION_PID || PID == HORI_MINI_PID) {
-                if(PID == PS3_PID || PID == HORI_MINI_PID) {
+        if(PID == PS3_PID || PID == PS3NAVIGATION_PID || PID == HORI_MINI_PID || PID == QANBA_CRYSTAL_PID) {
+                if(PID == PS3_PID || PID == HORI_MINI_PID || PID == QANBA_CRYSTAL_PID) {
 #ifdef DEBUG_USB_HOST
                         Notify(PSTR("\r\nDualshock 3 Controller Connected"), 0x80);
 #endif
                         PS3Connected = true;
                         if(PID == HORI_MINI_PID) {
                             controllerType = HoriMini;
+						}
+                        else if(PID == QANBA_CRYSTAL_PID) {
+                            controllerType = QanbaCrystal;
                         } else {
                             controllerType = PS3Official;
                         }
@@ -328,7 +331,7 @@ void PS3USB::printReport() { // Uncomment "#define PRINTREPORT" to print the rep
 }
 
 bool PS3USB::getButtonPress(ButtonEnum b) {
-        if(controllerType == HoriMini) {
+        if(controllerType == HoriMini || controllerType == QanbaCrystal) {
                 return (ButtonState & pgm_read_dword(&HORI_BUTTONS[(uint8_t)b]));     
         }
         return (ButtonState & pgm_read_dword(&PS3_BUTTONS[(uint8_t)b]));
@@ -336,7 +339,7 @@ bool PS3USB::getButtonPress(ButtonEnum b) {
 
 bool PS3USB::getButtonClick(ButtonEnum b) {
         uint32_t button;
-        if(controllerType == HoriMini) {
+        if(controllerType == HoriMini || controllerType == QanbaCrystal) {
                 button = pgm_read_dword(&HORI_BUTTONS[(uint8_t)b]);
         } else {
                 button = pgm_read_dword(&PS3_BUTTONS[(uint8_t)b]);
