@@ -36,6 +36,8 @@
 #define JOYTECH_VID                             0x162E // For unofficial Joytech controllers
 #define GAMESTOP_VID                            0x0E6F // Gamestop controller
 #define HORI_VID                            	0x24C6 // Hori
+#define HORI_FIGHTING_EDGE_VID                  0x0F0D // Hori Fighting Edge
+
 
 #define XBOX_WIRED_PID                          0x028E // Microsoft 360 Wired controller
 #define XBOX_WIRELESS_PID                       0x028F // Wireless controller only support charging
@@ -46,6 +48,7 @@
 #define GAMESTOP_WIRED_PID                      0x0401 // Gamestop wired controller
 #define AFTERGLOW_WIRED_PID                     0x0213 // Afterglow wired controller - it uses the same VID as a Gamestop controller
 #define HORI_SOUL_CALIBUR_PID                   0x550F // HORI SoulCalibur VI Game Pad
+#define HORI_FIGHTING_EDGE_PID                  0x00C0 // HORI Fighting Edge
 
 #define XBOX_REPORT_BUFFER_SIZE 14 // Size of the input report buffer
 
@@ -103,7 +106,7 @@ public:
          * @return     Returns true if the device's VID and PID matches this driver.
          */
         virtual bool VIDPIDOK(uint16_t vid, uint16_t pid) {
-                return ((vid == XBOX_VID || vid == MADCATZ_VID || vid == JOYTECH_VID || vid == GAMESTOP_VID || vid == HORI_VID) && (pid == XBOX_WIRED_PID || pid == MADCATZ_WIRED_PID || pid == GAMESTOP_WIRED_PID || pid == AFTERGLOW_WIRED_PID || pid == JOYTECH_WIRED_PID || pid == HORI_SOUL_CALIBUR_PID));
+                return ((vid == XBOX_VID || vid == MADCATZ_VID || vid == JOYTECH_VID || vid == GAMESTOP_VID || vid == HORI_VID || vid == HORI_FIGHTING_EDGE_VID) && (pid == XBOX_WIRED_PID || pid == MADCATZ_WIRED_PID || pid == GAMESTOP_WIRED_PID || pid == AFTERGLOW_WIRED_PID || pid == JOYTECH_WIRED_PID || pid == HORI_SOUL_CALIBUR_PID || pid == HORI_FIGHTING_EDGE_PID));
         };
         /**@}*/
 
