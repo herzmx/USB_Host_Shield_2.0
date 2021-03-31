@@ -36,8 +36,13 @@
 #define PS3NAVIGATION_PID       0x042F  // Navigation controller
 #define PS3MOVE_PID             0x03D5  // Motion controller
 
+#define PXN_VID 				0x0079  // PXN Arcade Stick
+#define PXN_0082_PID			0x1884  // PXN 0082 Arcade Stick 
+
+
 #define HORI_VID                0x0F0D  // Hori
 #define HORI_MINI_PID           0x00ED  // Fighting Stick mini 4 kai
+
 
 #define QANBA_VID               0x2C22 // Qanba
 #define QANBA_CRYSTAL_PID       0x2203 // Crystal
@@ -107,7 +112,7 @@ public:
          */
         virtual bool VIDPIDOK(uint16_t vid, uint16_t pid) {
                 return ((vid == PS3_VID  && (pid == PS3_PID || pid == PS3NAVIGATION_PID || pid == PS3MOVE_PID)) ||
-                        (vid == HORI_VID && pid == HORI_MINI_PID) || (vid == QANBA_VID && pid == QANBA_CRYSTAL_PID));
+                        (vid == HORI_VID && pid == HORI_MINI_PID) || (vid == QANBA_VID && pid == QANBA_CRYSTAL_PID) || (vid == PXN_VID && pid == PXN_0082_PID));
         };
         /**@}*/
 
