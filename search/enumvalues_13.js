@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['white',['White',['../controller_enums_8h.html#aac6fa7b0395b95cc528deaad0ce884a2ab548046646b36c12aa6ba841de500094',1,'White():&#160;controllerEnums.h'],['../controller_enums_8h.html#a94f7389d205c78830a5441370d7870fda283fc479650da98250635b9c3c0e7e50',1,'WHITE():&#160;controllerEnums.h']]]
+  ['vbus_5foff_5477',['vbus_off',['../usbhost_8h.html#ab1424f62efde609157774a4e80e016efaeb979760d8e42acc9ef9d8085c955426',1,'usbhost.h']]],
+  ['vbus_5fon_5478',['vbus_on',['../usbhost_8h.html#ab1424f62efde609157774a4e80e016efa74e666f0192f8886fbb2be73fb852b0a',1,'usbhost.h']]],
+  ['view_5479',['VIEW',['../controller_enums_8h.html#a94f7389d205c78830a5441370d7870fda577616539ca6eda467d3b4b6e6a551d5',1,'controllerEnums.h']]]
 ];

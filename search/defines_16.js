@@ -1,14 +1,12 @@
 var searchData=
 [
-  ['wi_5fprotocol_5fbt',['WI_PROTOCOL_BT',['../_b_t_d_8h.html#a05903a9351c5ced6b8be27b2869e62af',1,'BTD.h']]],
-  ['wi_5fsubclass_5frf',['WI_SUBCLASS_RF',['../_b_t_d_8h.html#a177fe269ddb7979d99b76d52bc281551',1,'BTD.h']]],
-  ['wii_5fcheck_5fextension_5fstate',['WII_CHECK_EXTENSION_STATE',['../_b_t_d_8h.html#a990925c3f1ef4962db33ab74d79976e8',1,'BTD.h']]],
-  ['wii_5fcheck_5fflag',['wii_check_flag',['../_wii_8h.html#ac551aee34d131e9407d9e0ede81e9cbe',1,'Wii.h']]],
-  ['wii_5fcheck_5fmotion_5fplus_5fstate',['WII_CHECK_MOTION_PLUS_STATE',['../_b_t_d_8h.html#a11b0db0910ac44ec8b090647d6a71088',1,'BTD.h']]],
-  ['wii_5fclear_5fflag',['wii_clear_flag',['../_wii_8h.html#ac88349598e4482a310450e34af9b7ce3',1,'Wii.h']]],
-  ['wii_5fflag_5fcalibrate_5fbalance_5fboard',['WII_FLAG_CALIBRATE_BALANCE_BOARD',['../_wii_8h.html#a927532cef823ea48fac1b90fb200f229',1,'Wii.h']]],
-  ['wii_5fflag_5fmotion_5fplus_5fconnected',['WII_FLAG_MOTION_PLUS_CONNECTED',['../_wii_8h.html#a34631633d4557244dc8eda52e8505acd',1,'Wii.h']]],
-  ['wii_5fflag_5fnunchuck_5fconnected',['WII_FLAG_NUNCHUCK_CONNECTED',['../_wii_8h.html#ae0ff99c8862a05df8877329982e1ef61',1,'Wii.h']]],
-  ['wii_5finit_5fmotion_5fplus_5fstate',['WII_INIT_MOTION_PLUS_STATE',['../_b_t_d_8h.html#acdcb0586ca7e9d357279bf4fba8b5257',1,'BTD.h']]],
-  ['wii_5fset_5fflag',['wii_set_flag',['../_wii_8h.html#ae72da8cfcaaad9b910ff14e08b72f60d',1,'Wii.h']]]
+  ['value_5fbetween_6546',['VALUE_BETWEEN',['../macros_8h.html#a18de126009ef53f46469341d2e223799',1,'macros.h']]],
+  ['value_5fwithin_6547',['VALUE_WITHIN',['../macros_8h.html#ad1bf62861b3f4199c42a93bf6b2181d0',1,'macros.h']]],
+  ['vendor_5fread_5frequest_6548',['VENDOR_READ_REQUEST',['../cdcprolific_8h.html#a230385b0735fad9d7b33e4f80d7deb4d',1,'cdcprolific.h']]],
+  ['vendor_5fread_5frequest_5ftype_6549',['VENDOR_READ_REQUEST_TYPE',['../cdcprolific_8h.html#a21c64a6ccc471ac907896f8590dcf7b2',1,'cdcprolific.h']]],
+  ['vendor_5fwrite_5frequest_6550',['VENDOR_WRITE_REQUEST',['../cdcprolific_8h.html#aa0dae52300cd2ca352f5d3cd2194824b',1,'cdcprolific.h']]],
+  ['vendor_5fwrite_5frequest_5ftype_6551',['VENDOR_WRITE_REQUEST_TYPE',['../cdcprolific_8h.html#a242bbbe616270b5c01d3614dbe57fe45',1,'cdcprolific.h']]],
+  ['vfprintf_5fp_6552',['vfprintf_P',['../version__helper_8h.html#a1c1f6f95b0f654f7c8280065feccf5cf',1,'version_helper.h']]],
+  ['vsnprintf_5fp_6553',['vsnprintf_P',['../version__helper_8h.html#ada0f0fa2c127b5486a9d7cba324b00d6',1,'version_helper.h']]],
+  ['vsprintf_5fp_6554',['vsprintf_P',['../version__helper_8h.html#a331f11242bffa41fbae842a55185e8cc',1,'version_helper.h']]]
 ];

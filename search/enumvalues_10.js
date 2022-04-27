@@ -1,12 +1,12 @@
 var searchData=
 [
-  ['t',['T',['../controller_enums_8h.html#a94f7389d205c78830a5441370d7870fda21f40778b7db9343a6ca75ec2c41ccce',1,'controllerEnums.h']]],
-  ['tempmove',['tempMove',['../controller_enums_8h.html#a00d5030559c481763282483889597d51a43025202f119b0f193cbc14c6a3cf59f',1,'controllerEnums.h']]],
-  ['topleft',['TopLeft',['../_wii_8h.html#a1f2e8277faa24c51a9c99f3fbac8d80ba61f66ddc6702462a94d3e231f02b9017',1,'Wii.h']]],
-  ['topright',['TopRight',['../_wii_8h.html#a1f2e8277faa24c51a9c99f3fbac8d80ba7e42a96f07eab63a8c9fa8a0526f34f4',1,'Wii.h']]],
-  ['touchpad',['TOUCHPAD',['../controller_enums_8h.html#a94f7389d205c78830a5441370d7870fda61cc97936d660c6a7633f3f8f58f4da0',1,'controllerEnums.h']]],
-  ['triangle',['TRIANGLE',['../controller_enums_8h.html#a94f7389d205c78830a5441370d7870fda2fd33892864d1c342d3bead2f2d9ad56',1,'controllerEnums.h']]],
-  ['two',['TWO',['../controller_enums_8h.html#a94f7389d205c78830a5441370d7870fda0e793500a63ffa575b9b712ca3bc9851',1,'controllerEnums.h']]],
-  ['type_5f0',['type_0',['../cdcprolific_8h.html#a6003f43ffe2391c0c31ea48f6b772627af7bb5f5cb18b8f8cac6c93db12ad7997',1,'cdcprolific.h']]],
-  ['type_5f1',['type_1',['../cdcprolific_8h.html#a6003f43ffe2391c0c31ea48f6b772627af55eb000231282fd0e3556a1c4e1dab8',1,'cdcprolific.h']]]
+  ['select_5456',['SELECT',['../controller_enums_8h.html#a94f7389d205c78830a5441370d7870fda1697a91b22c2369eb2ba427c2d193329',1,'controllerEnums.h']]],
+  ['share_5457',['SHARE',['../controller_enums_8h.html#a94f7389d205c78830a5441370d7870fda3754861e8c074fb088a2ed4f64786268',1,'controllerEnums.h']]],
+  ['shutdown_5458',['Shutdown',['../_p_s3_enums_8h.html#add5c7a32e8138b44244caf07232161aea82084136e62c38642986b05419b4e734',1,'PS3Enums.h']]],
+  ['sidelight_5fleft_5459',['Sidelight_left',['../_a_m_b_x_enums_8h.html#ab89d9ad8d1631f26d5e35b3e3c9b6ee2a28bdef30c9733b8cd7f4ccbce08143ac',1,'AMBXEnums.h']]],
+  ['sidelight_5fright_5460',['Sidelight_right',['../_a_m_b_x_enums_8h.html#ab89d9ad8d1631f26d5e35b3e3c9b6ee2a3c35749443d61bd0d6a13453c604c40e',1,'AMBXEnums.h']]],
+  ['slowblink_5461',['SLOWBLINK',['../xbox_enums_8h.html#abb8a1831f62ea139a2255c67bb24330facfcb52b0be6da777e98f28261a9d2454',1,'xboxEnums.h']]],
+  ['square_5462',['SQUARE',['../controller_enums_8h.html#a94f7389d205c78830a5441370d7870fda4233fbf0cafb86abcee94b38d769fc59',1,'controllerEnums.h']]],
+  ['start_5463',['START',['../controller_enums_8h.html#a94f7389d205c78830a5441370d7870fda13d000b4d7dc70d90239b7430d1eb6b2',1,'controllerEnums.h']]],
+  ['sync_5464',['SYNC',['../controller_enums_8h.html#a94f7389d205c78830a5441370d7870fda447bfe7992c2fe70bfe561225f74d379',1,'controllerEnums.h']]]
 ];
