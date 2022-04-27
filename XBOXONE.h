@@ -45,6 +45,7 @@
 #define XBOX_ONE_PID3                           0x02E3 // Microsoft X-Box One Elite pad
 #define XBOX_ONE_PID4                           0x02EA // Microsoft X-Box One S pad
 #define XBOX_ONE_PID13                          0x0B0A // Microsoft X-Box One Adaptive Controller
+#define XBOX_ONE_PID14                          0x0B12 // Microsoft X-Box Core Controller
 
 // Unofficial controllers
 #define XBOX_VID2                               0x0738 // Mad Catz
@@ -64,8 +65,8 @@
 #define XBOX_ONE_PID10                          0x541A // PowerA Xbox One Mini Wired Controller
 #define XBOX_ONE_PID11                          0x542A // Xbox ONE spectra
 #define XBOX_ONE_PID12                          0x543A // PowerA Xbox One wired controller
-#define XBOX_ONE_PID14                          0x02A8 // PDP Wired controller for XBOX ONE
-#define XBOX_ONE_PID15                          0x00C2 // HORI SoulCalibur VI Game Pad	
+#define XBOX_ONE_PID15                          0x02A8 // PDP Wired controller for XBOX ONE
+#define XBOX_ONE_PID16                          0x00C2 // HORI SoulCalibur VI Game Pad	
 
 
 
@@ -130,9 +131,10 @@ public:
          */
         virtual bool VIDPIDOK(uint16_t vid, uint16_t pid) {
                 return ((vid == XBOX_VID1 || vid == XBOX_VID2 || vid == XBOX_VID3 || vid == XBOX_VID4 || vid == XBOX_VID5 || vid == XBOX_VID6 || vid == XBOX_VID7) &&
-                    (pid == XBOX_ONE_PID1 || pid == XBOX_ONE_PID2 || pid == XBOX_ONE_PID3 || pid == XBOX_ONE_PID4 ||
+                       (pid == XBOX_ONE_PID1 || pid == XBOX_ONE_PID2 || pid == XBOX_ONE_PID3 || pid == XBOX_ONE_PID4 ||
                         pid == XBOX_ONE_PID5 || pid == XBOX_ONE_PID6 || pid == XBOX_ONE_PID7 || pid == XBOX_ONE_PID8 ||
-                        pid == XBOX_ONE_PID9 || pid == XBOX_ONE_PID10 || pid == XBOX_ONE_PID11 || pid == XBOX_ONE_PID12 || pid == XBOX_ONE_PID13 || pid == XBOX_ONE_PID14 || pid == XBOX_ONE_PID15 ));
+                        pid == XBOX_ONE_PID9 || pid == XBOX_ONE_PID10 || pid == XBOX_ONE_PID11 || pid == XBOX_ONE_PID12 || 
+                        pid == XBOX_ONE_PID13 || pid == XBOX_ONE_PID14 || pid == XBOX_ONE_PID15 || pid == XBOX_ONE_PID16));
         };
         /**@}*/
 
@@ -235,6 +237,9 @@ private:
 
         bool L2Clicked; // These buttons are analog, so we use we use these bools to check if they where clicked or not
         bool R2Clicked;
+
+        bool sharePressed;  // This button doesn't fit in the bitfield
+        bool shareClicked;
 
         uint8_t readBuf[XBOX_ONE_EP_MAXPKTSIZE]; // General purpose buffer for input data
         uint8_t cmdCounter;
